@@ -6,7 +6,13 @@ $curl = curl_init();
 $err     = curl_errno($curl);
 $errmsg  = curl_error($curl) ;
 
-/* Sample Data Feed - WebAPI */
+/* Sample Data Feed - WebAPI 
+Notes:  Author:  Bare Wire Networks Corp
+        Website: www.barewirenetworks.com
+        Usage:  include 'trestle-token.php'
+		then read the file called aaa.out
+		get your credentials from Trestle/CoreLogic First.
+*/
 $data = array(
     "client_id" => "your client ID goes here. ",
     "client_secret" => "your client secret goes here. copy + paste ",
@@ -54,7 +60,7 @@ if ($response == NULL) {
    die("failure");
 }
 
-$myfile = fopen("token.txt", "w") or die("Unable to open file!");
+$myfile = fopen("aaa.out", "w") or die("Unable to open file!");
 fwrite($myfile, "access_token:".$auth->{'access_token'});
 fclose($myfile);
 
